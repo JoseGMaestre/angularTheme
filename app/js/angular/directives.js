@@ -9,3 +9,9 @@ angular.module('myApp.directives', []).
       elm.text(version);
     };
   }]);
+
+
+myApp.directive("alert", function () {
+return {
+templateUrl: "alert.html"
+}) ;

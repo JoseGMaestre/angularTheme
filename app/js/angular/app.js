@@ -30,6 +30,16 @@ $scope.cars = [
 {plate: '5BBM299'},
 {plate: '5AOJ230'}
 ];
+ console.info('sss');
+ $scope.cars = [];
+$scope.park = function (car) {
+  console.info('sss');
+car.entrance = new Date();
+$scope.cars.push(car);
+delete $scope.car;
+};
+
+ 
 }
 
 
