@@ -31,8 +31,11 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+
+
+
     </head>
-    <body class="skin-black">
+    <body class="skin-blue" ng-controller="parkingCtrl">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="index.html" class="logo">
@@ -313,6 +316,13 @@
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
+                        
+                        <li class="active">
+                            <a href="pages/alumno/blank.html">
+                                <i class="fa fa-dashboard"></i> <span>Alumno</span>
+                            </a>
+                        </li>
+                           
                         <li>
                             <a href="pages/widgets.html">
                                 <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
@@ -440,7 +450,7 @@
                             <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>
-                                        53<sup style="font-size: 20px">%</sup>
+                                        {{bounce}}<sup style="font-size: 20px">%</sup>
                                     </h3>
                                     <p>
                                         Bounce Rate
@@ -459,7 +469,7 @@
                             <div class="small-box bg-yellow">
                                 <div class="inner">
                                     <h3>
-                                        44
+                                        {{users}} 
                                     </h3>
                                     <p>
                                         User Registrations
@@ -478,7 +488,7 @@
                             <div class="small-box bg-red">
                                 <div class="inner">
                                     <h3>
-                                        65
+                                        {{visitors}}
                                     </h3>
                                     <p>
                                         Unique Visitors
@@ -748,7 +758,8 @@
                                                 <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
                                                 Mike Doe
                                             </a>
-                                            I would like to meet you to discuss the latest news about
+                                            
+                                            I would like to meet you to <h3 ng-bind="appTitle"></h3>  discuss the latest news about
                                             the arrival of the new theme. They say it is going to be one the
                                             best themes on the market
                                         </p>
@@ -907,10 +918,26 @@
                             </div><!-- /.box -->
 
                         </section><!-- right col -->
+                        <table>
+<thead>
+    el nombre es {{nombre}}
+<tr>
+<th>Plate</th>
+<th>Entrance</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="car in cars">
+<td><span ng-bind="car.plate"></span></td>
+<td><span ng-bind="car.entrance"></span></td>
+</tr>
+</tbody>
+</table>
                     </div><!-- /.row (main row) -->
 
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
+            
         </div><!-- ./wrapper -->
 
         <!-- add new calendar event modal -->
@@ -950,10 +977,10 @@
         <!-- angular-seed resources  -->
         <script src="lib/angular/angular.js"></script>
         <script src="lib/angular/angular-route.js"></script>
-        <script src="js/app.js"></script>
-        <script src="js/services.js"></script>
-        <script src="js/controllers.js"></script>
-        <script src="js/filters.js"></script>
-        <script src="js/directives.js"></script>
+        <script src="js/angular/app.js"></script>
+        <script src="js/angular/services.js"></script>
+        <script src="js/angular/controllers.js"></script>
+        <script src="js/angular/filters.js"></script>
+        <script src="js/angular/directives.js"></script>
     </body>
 </html>
