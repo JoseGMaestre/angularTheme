@@ -10,8 +10,3 @@ angular.module('myApp.directives', []).
     };
   }]);
 
-
-myApp.directive("alert", function () {
-return {
-templateUrl: "alert.html"
-}) ;
