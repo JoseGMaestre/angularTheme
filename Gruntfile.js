@@ -1,3 +1,14 @@
+// modules =================================================
+var express        = require('express');
+var app            = express();
+var bodyParser     = require('body-parser');
+var methodOverride = require('method-override');
+
+// configuration ===========================================
+    
+
+
+
 module.exports = function(grunt){
     grunt.initConfig({
         pkg:grunt.file.readJSON('package.json'),
@@ -34,7 +45,9 @@ module.exports = function(grunt){
             }
         }
     });
- 
+
+ require('./app/routes')(app); // configure our routes
+
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-express');    
     grunt.registerTask('server',['express','watch']);
